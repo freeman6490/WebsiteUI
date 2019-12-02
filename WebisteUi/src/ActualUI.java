@@ -8,6 +8,12 @@ import java.awt.event.*;
  * The frame of the UI.
  */
 public class ActualUI extends JFrame implements ActionListener {
+	/**
+	 * @author Luke Freeman
+	 * sets up the menu bar on the top of the UI
+	 * options are file and help
+	 * file closes the program, help drops down an about button which opens an informative message using JOptionPane
+	 */
 	public void setUpMenu() {
 		JMenuBar bar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File");
@@ -35,6 +41,13 @@ public class ActualUI extends JFrame implements ActionListener {
 		bar.add(mnuFile2);
 		setJMenuBar(bar);
 	}
+	/**
+	 * @author Luke Freeman
+	 * set up the UI, added some buttons too
+	 * Buttons so far
+	 * btnSaveToText
+	 * btnSaveToJson
+	 */
 	public ActualUI() {
 		//sets up the look inside this constructor
 		setTitle("Final Project");
