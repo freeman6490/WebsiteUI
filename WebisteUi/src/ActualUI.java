@@ -12,13 +12,8 @@ import java.net.URLConnection;
  * The frame of the UI.
  */
 class ButtonHandler implements ActionListener {
-
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void actionPerformed(ActionEvent arg0) {}
 }
 public class ActualUI extends JFrame implements ActionListener {
 	/**
@@ -57,7 +52,6 @@ public class ActualUI extends JFrame implements ActionListener {
 						+ "I am currently a sophmore at Lewis University. This is "
 						+ "a program that takes data from a wesbite and saves it to either"
 						+ "a text or a json file. This is my first UI as well.");
-
 			}
 		});
 		mnuFile.add(miExit);
@@ -75,9 +69,11 @@ public class ActualUI extends JFrame implements ActionListener {
 	 * btnSaveToJson
 	 */
 	public ActualUI() {
-
-		
-		//sets up the look inside this constructor
+		/**
+		 * @author Luke Freeman
+		 * this is the constructor for the UI itself. it sets up buttons, border layouts, panels
+		 * and eventually the UI itself, added action listeners and button handlers as well
+		 */
 		JPanel panSouth = new JPanel();
 		panSouth.setLayout(new FlowLayout());
 		ButtonHandler handlerForText = new ButtonHandler();
@@ -99,12 +95,10 @@ public class ActualUI extends JFrame implements ActionListener {
 		panSouth.add(btnSaveToJson);
 		btnSaveToText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 			}
 		});
 		btnSaveToJson.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) {			
 			}
 		});
 		panSouth.add(btnSaveToText);
@@ -112,7 +106,6 @@ public class ActualUI extends JFrame implements ActionListener {
 		c.add(panSouth, BorderLayout.SOUTH);
 		btnHelp.addActionListener(this);
 		setUpMenu();
-		
 		JLabel urlLabel = new JLabel("Enter URL");
 		JTextField url1 = new JTextField(20);
 		JButton btnGrabData = new JButton("grab");
@@ -143,13 +136,17 @@ public class ActualUI extends JFrame implements ActionListener {
 		c.add(panNorth, BorderLayout.NORTH);
 	}
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void actionPerformed(ActionEvent e) {}
+	/**
+	 * main class
+	 * @author Luke Freeman
+	 * main class that is going to implement the UI
+	 * the UI is made above but the main will be used to parse the data as well
+	 * probably going to use a while loop and go from there
+	 * leading more and more to only using one big class with more subclasses in it
+	 */
 	public static void main (String [] args) {
 		ActualUI AUI = new ActualUI();
 		AUI.setVisible(true);	//this shows the frame itself
-		
 	}
 }
