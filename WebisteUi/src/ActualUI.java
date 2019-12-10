@@ -90,9 +90,7 @@ public class ActualUI extends JFrame implements ActionListener {
 		c.setLayout(new BorderLayout());
 		c.add(showText, BorderLayout.CENTER);
 		JButton btnSaveToText = new JButton("Save to text");
-		btnSaveToText.setBackground(Color.BLUE);
 		JButton btnSaveToJson = new JButton("Save to JSON");
-		btnSaveToJson.setBackground(Color.BLUE);
 		JButton btnFile = new JButton("File");
 		JButton btnHelp = new JButton("Help");
 		btnSaveToText.addActionListener(handlerForText);
@@ -109,6 +107,9 @@ public class ActualUI extends JFrame implements ActionListener {
 				
 			}
 		});
+		panSouth.add(btnSaveToText);
+		panSouth.add(btnSaveToJson);
+		c.add(panSouth, BorderLayout.SOUTH);
 		btnHelp.addActionListener(this);
 		setUpMenu();
 		
@@ -141,14 +142,14 @@ public class ActualUI extends JFrame implements ActionListener {
 		panNorth.add(btnGrabData);
 		c.add(panNorth, BorderLayout.NORTH);
 	}
-	public static void main (String [] args) {
-		ActualUI AUI = new ActualUI();
-		AUI.setVisible(true);	//this shows the frame itself
-		
-	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+	public static void main (String [] args) {
+		ActualUI AUI = new ActualUI();
+		AUI.setVisible(true);	//this shows the frame itself
 		
 	}
 }
