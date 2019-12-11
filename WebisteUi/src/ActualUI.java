@@ -99,6 +99,34 @@ public class ActualUI extends JFrame implements ActionListener {
 		panSouth.add(btnSaveToText);
 		panSouth.add(btnSaveToJson);
 		btnSaveToText.addActionListener(new ActionListener() {
+			public void actionPerformed1(ActionEvent e) {
+				System.out.println("Enter name of file: ");
+				fileName = sc.nextLine();
+				Writer.writeToTextFle(fileName, movies);
+				System.out.println("saved");
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		btnSaveToJson.addActionListener(new ActionListener() {
+			public void actionPerformed2(ActionEvent e) {
+				System.out.println("Enter the name of file");
+				fileName = sc.nextLine();
+				Writer.writeToJSON(fileName, movies);
+				System.out.println("saved");
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		btnSaveToText.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
@@ -140,18 +168,6 @@ public class ActualUI extends JFrame implements ActionListener {
 		panNorth.add(btnGrabData);
 		c.add(panNorth, BorderLayout.NORTH);
 		}
-	public void actionPerformed1(ActionEvent e) {
-		System.out.println("Enter name of file: ");
-		fileName = sc.nextLine();
-		Writer.writeToTextFle(fileName, movies);
-		System.out.println("saved");
-	}
-	public void actionPerformed2(ActionEvent e) {
-		System.out.println("Enter the name of file");
-		fileName = sc.nextLine();
-		Writer.writeToJSON(fileName, movies);
-		System.out.println("saved");
-	}
 	@Override
 	public void actionPerformed(ActionEvent e) {}
 	/**
