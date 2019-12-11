@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * @author Luke Freeman
  * Creates the UI itself and adds buttons and other things as well
@@ -16,6 +18,9 @@ class ButtonHandler implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {}
 }
 public class ActualUI extends JFrame implements ActionListener {
+	private ArrayList<Movie> movies;
+	String fileName;
+	Scanner sc = new Scanner (System.in);
 	/**
 	 * @author Luke Freeman
 	 * sets up the menu bar on the top of the UI
@@ -108,7 +113,7 @@ public class ActualUI extends JFrame implements ActionListener {
 		setUpMenu();
 		JLabel urlLabel = new JLabel("Enter URL");
 		JTextField url1 = new JTextField(20);
-		JButton btnGrabData = new JButton("grab");
+		JButton btnGrabData = new JButton("fetch");
 		btnGrabData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -134,6 +139,18 @@ public class ActualUI extends JFrame implements ActionListener {
 		panNorth.add(url1);
 		panNorth.add(btnGrabData);
 		c.add(panNorth, BorderLayout.NORTH);
+		}
+	public void actionPerformed1(ActionEvent e) {
+		System.out.println("Enter name of file: ");
+		fileName = sc.nextLine();
+		Writer.writeToTextFle(fileName, movies);
+		System.out.println("saved");
+	}
+	public void actionPerformed2(ActionEvent e) {
+		System.out.println("Enter the name of file");
+		fileName = sc.nextLine();
+		Writer.writeToJSON(fileName, movies);
+		System.out.println("saved");
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {}
